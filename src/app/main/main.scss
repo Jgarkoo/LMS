@@ -1,0 +1,291 @@
+.boddy{
+    .topside-boddy{
+        background-color: #B6BDCA;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 20px 40px 50px;
+        .education{
+            border: solid rgb(255, 247, 247);
+            border-width: 0px 0px 2px 0px;
+            padding-bottom: 60px;
+            width: 40%;
+            h1{
+                color: rgb(255, 247, 247);
+                font-size: 40px;
+                line-height: 1.4;
+            }
+        }
+        .education-img{
+            img{
+                width: 700px;
+                border-radius: 25px;
+            }
+        }
+    }
+    .middleside-boddy{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 350px;
+            height: 24em;        
+            object-fit: contain;
+        }
+        div{
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 45px;
+            p{
+                color: rgb(255, 247, 247);
+                border: solid rgb(255, 247, 247);
+                border-width: 0px 0px 2px 0px;
+                font-size: 25px;
+                padding: 0px 0px 20px 0px;
+            }
+        }
+        .mb-1{
+            background-color: #C9A3A4;
+        }
+        .mb-2{
+            background-color: #ADCDEC;
+        }
+        .mb-3{
+            background-color: #AEB5AC;
+        }
+    }
+
+    .bottomside-boddy{
+        background-color: #957343;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            margin-left: 50px;
+            width: 38%;
+           h6{
+                color: rgb(255, 247, 247);
+                border: solid rgb(255, 247, 247);
+                border-width: 0px 0px 2px 0px;
+                font-size: 25px;
+                padding: 0px 0px 20px 0px;
+            } 
+            p{
+                color: rgb(255, 247, 247);
+                font-size: 25px;
+                margin-top: 25px;
+            }
+        }
+        img{
+                width: 600px;
+        }
+    }   
+}
+
+@media screen and (max-width: 768px) {
+    .boddy{
+        .topside-boddy{
+            padding: 20px;
+            flex-direction: column;
+            text-align: center;
+            .education{
+                width: 100%;
+                padding-bottom: 20px;
+                h1{
+                    font-size: 25px;
+                }
+            }
+            .education-img{
+                img{
+                    width: 90%;
+                    margin-top: 50px;
+                }
+            }
+        }
+        .middleside-boddy{
+            flex-direction: column;
+            text-align: center;
+            img{
+                width: 80%;
+                height: auto;        
+                object-fit: contain;
+                margin-bottom: 10px;
+            }
+            div{
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 15px;
+                p{
+                    font-size: 20px;
+                    padding: 0px 0px 20px 0px;
+                }
+            }
+        }
+        .bottomside-boddy{
+            flex-direction: column;
+            text-align: center;
+            div{
+                margin-left: 0px;
+                width: 90%;
+               h6{
+                    font-size: 20px;
+                    margin-top: 20px;
+                    padding: 0px 0px 20px 0px;
+                } 
+                p{
+                    font-size: 20px;
+                    margin-top: 25px;
+                }
+            }
+            img{
+                    width: 90%;
+                    height: auto;        
+                    object-fit: contain;
+                    margin-top: 20px;
+            }
+        }   
+    }   
+}
+
+@media  screen and (min-width: 769px) and (max-width: 1024px) {
+    .boddy{
+        .topside-boddy{
+            padding: 20px;
+            flex-direction: column;
+            text-align: center;
+            .education{
+                width: 100%;
+                padding-bottom: 20px;
+                h1{
+                    font-size: 30px;
+                }
+            }
+            .education-img{
+                img{
+                    width: 90%;
+                    margin-top: 50px;
+                }
+            }
+        }
+        .middleside-boddy{
+            flex-direction: column;
+            text-align: center;
+            img{
+                width: 500px;
+                height: auto;        
+                object-fit: contain;
+                margin-bottom: 10px;
+            }
+            div{
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 25px;
+                p{
+                    font-size: 22px;
+                    padding: 0px 0px 20px 0px;
+                }
+            }
+        }
+        .bottomside-boddy{
+            flex-direction: column;
+            text-align: center;
+            div{
+                margin-left: 0px;
+                width: 80%;
+               h6{
+                    font-size: 22px;
+                    margin-top: 20px;
+                    padding: 0px 0px 20px 0px;
+                } 
+                p{
+                    font-size: 22px;
+                    margin-top: 25px;
+                }
+            }
+            img{
+                    width: 600px;
+                    height: auto;        
+                    object-fit: contain;
+                    margin-top: 20px;
+            }
+        }   
+    }
+    
+}
+    
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .boddy{
+        .topside-boddy{
+            .education{
+                h1{
+                    font-size: 35px;
+                }
+            }
+            .education-img{
+                img{
+                    width: 650px;
+                    margin-top: 50px;
+                }
+            }
+        }
+        .middleside-boddy{
+            div{
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 35px;
+                p{
+                    font-size: 24px;
+                    padding: 0px 0px 20px 0px;
+                }
+            }
+        }
+        .bottomside-boddy{
+            div{
+               h6{
+                    font-size: 24px;
+                    margin-top: 20px;
+                    padding: 0px 0px 20px 0px;
+                } 
+                p{
+                    font-size: 24px;
+                    margin-top: 25px;
+                }
+            }
+            img{
+                    width: 700px;
+                    height: auto;        
+                    object-fit: contain;
+                    margin-top: 20px;
+            }
+        }   
+    }   
+}
