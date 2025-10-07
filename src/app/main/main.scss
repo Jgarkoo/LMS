@@ -167,41 +167,30 @@
 @media  screen and (min-width: 769px) and (max-width: 1024px) {
     .boddy{
         .topside-boddy{
-            padding: 20px;
-            flex-direction: column;
-            text-align: center;
+            gap: 50px;
             .education{
-                width: 100%;
+                width: 40%;
                 padding-bottom: 20px;
                 h1{
-                    font-size: 30px;
+                    font-size: 25px;
                 }
             }
             .education-img{
                 img{
-                    width: 90%;
+                    width: 500px;
                     margin-top: 50px;
                 }
             }
         }
         .middleside-boddy{
-            flex-direction: column;
-            text-align: center;
             img{
-                width: 500px;
-                height: auto;        
-                object-fit: contain;
+                width: 200px;
                 margin-bottom: 10px;
             }
             div{
                 padding: 0px;
-                width: 100%;
-                height: 100%;
                 margin-right: auto;
                 margin-left: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
                 padding: 25px;
                 p{
                     font-size: 22px;
@@ -210,26 +199,17 @@
             }
         }
         .bottomside-boddy{
-            flex-direction: column;
-            text-align: center;
             div{
-                margin-left: 0px;
-                width: 80%;
+                width: 100%;
                h6{
                     font-size: 22px;
-                    margin-top: 20px;
-                    padding: 0px 0px 20px 0px;
                 } 
                 p{
                     font-size: 22px;
-                    margin-top: 25px;
                 }
             }
             img{
-                    width: 600px;
-                    height: auto;        
-                    object-fit: contain;
-                    margin-top: 20px;
+                    width: 550px;
             }
         }   
     }
