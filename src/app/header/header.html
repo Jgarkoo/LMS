@@ -1,17 +1,35 @@
-<header>
-  <div class="header-left">
-    <a id="homepg" [routerLink]="['/home']"> Home Page </a>
-  </div>
+@if (!errorPage) {
+  @if (homePage) {
+    <header>
+      <div class="header-left">
+        <a id="homepg" [routerLink]="['/home']">Home Page</a>
+      </div>
 
-  <div class="header-right">
-    <a>
-        <span id="dot">
-            &#x2022;
-        </span>
-        <span id="login"> 
-            Log In
-        </span>
-    </a>
-    <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
-  </div>
-</header>
+      <div class="header-right">
+        <a>
+          <span id="dot">&#x2022;</span>
+          <span id="login" [routerLink]="['/login-register']">Log In</span>
+        </a>
+        <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
+      </div>
+    </header>
+  } @else if (isLoginPage) {
+    <header class="login-header">
+      <div class="header-left">
+        <a [routerLink]="['/home']">Back to Home</a>
+      </div>
+      <div class="header-right">
+        <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
+      </div>
+    </header>
+  } @else if (logInRegister) {
+    <header class="login-header">
+      <div class="header-left">
+        <a [routerLink]="['/home']">Back to Home</a>
+      </div>
+      <div class="header-right">
+        <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
+      </div>
+    </header>
+  } 
+}

@@ -232,15 +232,14 @@
             }
         }
         .middleside-boddy{
+            img{
+                width: 250px;
+                margin-bottom: 20px;
+            }
             div{
                 padding: 0px;
-                width: 100%;
-                height: 100%;
                 margin-right: auto;
                 margin-left: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
                 padding: 35px;
                 p{
                     font-size: 24px;
@@ -262,8 +261,6 @@
             }
             img{
                     width: 700px;
-                    height: auto;        
-                    object-fit: contain;
                     margin-top: 20px;
             }
         }   

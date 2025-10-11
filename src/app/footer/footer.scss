@@ -1,10 +1,14 @@
-.footer{
+footer{
     width: 100%;
-    background-color: #f2f7f7;
+    background-color: #424d64;
     display: flex;
     justify-content: space-between;
     padding: 50px;
-    color: #858686;
+    .leftside{
+        p{
+            color: #c7c7c7;
+        }
+    }
     .center{
         ul{
             cursor: pointer;
@@ -12,7 +16,7 @@
                 list-style: none;
                 margin-bottom: 10px;
                 a{
-                    color: #858686;
+                    color: #c7c7c7;
                     &:hover{
                         color: black;
                     }
@@ -24,45 +28,86 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        a{
+        color: #c7c7c7;
+        #email{                
+            color: #c7c7c7;
             text-decoration: none;
-            color: #858686;
         }
     }
 }
 
-@media screen and ( max-width: 768px ) {
-    .footer{
-        flex-direction: row;
+@media screen and (max-width: 768px) {
+    footer {
+        flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 20px;
         width: 100%;
 
-        .leftside{
-            p{
-                font-size: 12px;
+        .leftside {
+            margin-bottom: 20px; 
+            p {
+                font-size: 12px !important; 
             }
         }
-        .center{
-            ul{
+
+        .center {
+            margin-bottom: 20px; 
+            ul {
                 padding: 0px;
-                li{
-                    margin-bottom: 2px;
-                    font-size: 12px;
+                li {
+                    margin-bottom: 5px; 
+                    font-size: 12px !important; 
                 }
             }
         }
-        .rightside{
+
+        .rightside {
             align-items: center;
             justify-content: center;
-            a{
-                font-size: 12px;
+            a {
+                font-size: 12px !important; 
             }
-            p{
-                font-size: 12px;
+            p {
+                font-size: 12px !important;
             }
         }
-    }
+    }   
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
     
+    footer {
+        padding: 20px;
+        width: 100%;
+
+        .leftside {
+            margin-bottom: 20px; 
+            p {
+                font-size: 14px !important; 
+            }
+        }
+
+        .center {
+            margin-bottom: 20px; 
+            ul {
+                padding: 0px;
+                li {
+                    margin-bottom: 5px; 
+                    font-size: 14px !important; 
+                }
+            }
+        }
+
+        .rightside {
+            align-items: center;
+            justify-content: center;
+            a {
+                font-size: 14px !important; 
+            }
+            p {
+                font-size: 14px !important;
+            }
+        }
+    }    
 }

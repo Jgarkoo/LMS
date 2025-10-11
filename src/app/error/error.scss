@@ -1,0 +1,55 @@
+.cont{
+    text-align: center;
+    padding: 30px 0px;
+    height: 100vh;
+    background-color: rgb(25, 92, 159);
+    h1{
+        color: rgb(209, 209, 209);
+    }
+    p{
+        margin-top: 20px; 
+        margin-bottom: 20px;
+        font-size: 25px;
+        color: rgb(209, 209, 209);
+    }
+    a{
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none; 
+        color: #0A7CFF;
+        &:hover{
+            transition: 0.3s;
+            background-color: rgb(9, 51, 73);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    
+    h1{
+        font-size: 25px;
+    }
+    p{
+        font-size: 18px !important;
+    }
+    a{
+        padding: 8px !important;
+    }
+
+}
+
+@media only screen and (min-width: 769px)  and (max-width: 1024px){
+    
+    h1{
+        font-size: 28px;
+    }
+    p{
+        font-size: 20px !important;
+    }
+    a{
+        padding: 8px !important;
+    }
+
+}
