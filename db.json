@@ -1,0 +1,13 @@
+{
+  "students": [
+    {
+      "id": "6ec6",
+      "name": "luka",
+      "lastName": "jgharkava",
+      "mail": "lukaj@example.com",
+      "password": "luka1234",
+      "confirmPassword": "luka1234"
+    }
+  ],
+  "teachers": []
+}

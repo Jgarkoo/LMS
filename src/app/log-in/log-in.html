@@ -1,18 +1,20 @@
 <div class="log-in">
-    <img src="img/img7.jpg" alt="">
+  <img src="img/img7.jpg" alt="">
   <div class="log-in-container">
     <div class="log-in-form"> 
-      <h1>Log In</h1>
-      <form>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-          <div class="buttons">
-              <button type="submit">Log In</button>
-              <button type="submit">Register</button>
-          </div>
-      </form>
+      @if (!logInAsStudent){
+        <app-log-in-form #logInFormComp></app-log-in-form>
+        <div class="buttons">
+          <button type="submit" id="log-in-button" (click)="onSubmit()">Log In</button>
+          <button type="button" id="register-button" (click)="showRegistration()">Register</button>
+      </div>
+      } @else {
+        <button (click)="showRegistration()" id="go-back">&#8249;</button>
+        <app-registration #registrationComp></app-registration>
+        <div class="buttons">
+          <button type="submit" id="submit-button" (click)="onSubmit()">Submit</button>
+      </div>
+      }
     </div>
   </div>
 </div>
