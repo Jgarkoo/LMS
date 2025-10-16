@@ -19,6 +19,14 @@ form{
 }
 
 
+.default-state {
+    background-color: white;
+}
+
+.invalid-state {
+    background-color:  #ffeef0, 
+}
+
 @media (max-width: 678px){
     form{
         width: 95%;

@@ -1,20 +1,41 @@
 form{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
     h1{
         margin-bottom: 40px;
+        margin-left: 50px;
     }
-    input{
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        width: 300px;
-        font-size: 16px;
+    .form-for-login{        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        .fullname{
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            #name,
+            #last-Name {
+                width: 140px;
+            }
+        }
+        .date-grade{
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            #birth-date,
+            #grade {
+                width: 140px;
+            }
+        }
+        input{
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
     }
 }
 
@@ -41,12 +62,11 @@ form{
 .invalid-state {
     background-color:  #ffeef0, 
     
- }
+}
 
 .valid-state {
     background-color: #F8FFF8;
 }
-
 
 @media (max-width: 678px){
     form{

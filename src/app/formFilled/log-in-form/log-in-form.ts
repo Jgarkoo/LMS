@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import {  FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Student } from '../../service/student';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class LogInForm  implements OnInit, OnDestroy{
 
   logInAsStudent: boolean = false;
 
+  private router = inject(Router)
   private service = inject(Student);
   subscription: Subscription = new Subscription();
 
@@ -25,27 +27,37 @@ export class LogInForm  implements OnInit, OnDestroy{
   });
 
   ngOnInit(): void {
-    this.logIn();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe(); 
   }
 
-  logIn(){
-    if (!this.logInStudentForm.valid) return;
+logIn() {
+    if (!this.logInStudentForm.valid) {
+      console.warn('Form invalid');
+      this.logInStudentForm.markAllAsTouched();
+      return;
+    }
 
-      const { mail, password } = this.logInStudentForm.value;
+    const { mail, password } = this.logInStudentForm.value;
 
-      const logInStudent = this.service.logIn(mail!, password!).subscribe({
-        next: (res) => {
-            this.logInAsStudent = true;
-            this.logInStudentForm.reset();
-        },
-        error: (err) => {
-          console.log('Login failed', err); 
+    const logInStudent = this.service.logIn(mail!, password!).subscribe({
+      next: (res) => {
+        if (res.length > 0) {
+          console.log('Login successful');
+          localStorage.setItem('isLoggedIn', 'true');
+          this.router.navigate(['/student-page']);
+          this.logInStudentForm.reset();
+        } else {
+          console.warn('Invalid email or password');
         }
-      });
+      },
+      error: (err) => {
+        console.log('Login failed', err);
+      }
+    });
+
     this.subscription.add(logInStudent);
   }
 

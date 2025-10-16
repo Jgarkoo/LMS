@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guard/loginguard-guard';
 
 export const routes: Routes = [
 
@@ -25,6 +26,13 @@ export const routes: Routes = [
         title: 'Student/Teacher Log in Page',
         loadComponent: () => import('./log-in-register/log-in-register').then(m => m.LogInRegister)
 
+    },
+
+    {
+        path: 'student-page',
+        title: 'student page',
+        canActivate: [authGuard],
+        loadComponent: () => import ('./studentpage/studentpage').then(m=>m.Studentpage)
     },
 
     { 

@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Registration } from "../formFilled/registration/registration";
 import { LogInForm } from "../formFilled/log-in-form/log-in-form";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -17,6 +18,8 @@ export class LogIn implements OnInit {
   @ViewChild('registrationComp') registrationComponent!: Registration;
   @ViewChild('logInFormComp') LogInFormComponent!: LogInForm;
 
+  private router = inject(Router)
+
   ngOnInit() {
     
   }
@@ -27,6 +30,9 @@ export class LogIn implements OnInit {
       this.registrationComponent.addStudent();
     } else {
       this.LogInFormComponent.logIn();
+      if(this.LogInFormComponent){
+      this.router.navigate(['/student-page']);
+      }
     }
   }
 

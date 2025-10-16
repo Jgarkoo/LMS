@@ -1,52 +1,83 @@
 <form [formGroup]="registerStudentForm">
     <h1>Registration</h1>
-    <input 
-    type="text" 
-    id="name"
-    placeholder="name" 
-    formControlName="name" 
-    [ngClass]="{'default-state': !name.touched,
-    'invalid-state': name.touched && name.invalid,
-    'valid-state': name.touched && name.valid}"
-    required>
-    
-    <input 
-    type="text" 
-    id="last-Name"
-    placeholder="last-name"
-    formControlName="lastName" 
-    [ngClass]="{'default-state': !lastname.touched,
-    'invalid-state': lastname.touched && lastname.invalid,
-    'valid-state': lastname.touched && lastname.valid}"
-    required>
-   
-    <input 
-    type="text" 
-    id="mail"
-    placeholder="email" 
-    formControlName="mail" 
-    [ngClass]="{'default-state': !email.touched,
-    'invalid-state': email.touched && email.invalid,
-    'valid-state': email.touched && email.valid}"
-    required>
-    
-    <input 
-    type="password" 
-    id="passWord"
-    placeholder="password" 
-    formControlName="password" 
-    [ngClass]="{'default-state': !pasw.touched,
-    'invalid-state': pasw.touched && pasw.invalid,
-    'valid-state': pasw.touched && pasw.valid}"
-    required>
-    
-    <input 
-    type="password" 
-    id="confirm-password" 
-    placeholder="Confirm password" 
-    formControlName="confirmPassword" 
-    [ngClass]="{'default-state': !cpasw.touched,
-    'invalid-state': cpasw.touched && cpasw.invalid,
-    'valid-state': cpasw.touched && cpasw.valid}"
-    required>
+    <div class="form-for-login">
+        <div class="fullname">
+            <input 
+            type="text" 
+            id="name"
+            placeholder="name" 
+            formControlName="name" 
+            [ngClass]="{
+            'default-state': !name.touched,
+            'invalid-state': name.touched && name.invalid,
+            'valid-state': name.touched && name.valid}"
+            required>
+            
+            <input 
+            type="text" 
+            id="last-Name"
+            placeholder="last-name"
+            formControlName="lastName" 
+            [ngClass]="{
+            'default-state': !lastname.touched,
+            'invalid-state': lastname.touched && lastname.invalid,
+            'valid-state': lastname.touched && lastname.valid}"
+            required>
+        </div>
+        <div class="date-grade">
+            <input 
+            type="date" 
+            id="birth-date"
+            placeholder="date" 
+            formControlName="date" 
+            [ngClass]="{
+            'default-state': !date.touched,
+            'invalid-state': date.touched && date.invalid,
+            'valid-state': date.touched && date.valid}"
+            required>
+            
+            <input 
+            type="text" 
+            id="grade"
+            placeholder="grade"
+            formControlName="grade" 
+            [ngClass]="{
+            'default-state': !grade.touched,
+            'invalid-state': grade.touched && grade.invalid,
+            'valid-state': grade.touched && grade.valid}"
+            required>
+        </div>
+        <input 
+        type="text" 
+        id="mail"
+        placeholder="email" 
+        formControlName="mail" 
+        [ngClass]="{
+        'default-state': !email.touched,
+        'invalid-state': email.touched && email.invalid,
+        'valid-state': email.touched && email.valid}"
+        required>
+        
+        <input 
+        type="password" 
+        id="passWord"
+        placeholder="password" 
+        formControlName="password" 
+        [ngClass]="{
+        'default-state': !pasw.touched,
+        'invalid-state': pasw.touched && pasw.invalid,
+        'valid-state': pasw.touched && pasw.valid}"
+        required>
+        
+        <input 
+        type="password" 
+        id="confirm-password" 
+        placeholder="Confirm password" 
+        formControlName="confirmPassword" 
+        [ngClass]="{
+        'default-state': !cpasw.touched,
+        'invalid-state': cpasw.touched && cpasw.invalid,
+        'valid-state': cpasw.touched && cpasw.valid}"
+        required>
+    </div>
 </form>

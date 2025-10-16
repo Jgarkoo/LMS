@@ -45,4 +45,8 @@ export class Header implements OnInit,  OnDestroy {
   get logInRegister(): boolean {
     return this.currentUrl.includes('/login-register');
   }
+
+  get studentPage(): boolean {
+    return this.currentUrl.includes('/student-page');
+  }
 }

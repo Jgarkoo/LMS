@@ -8,7 +8,7 @@
     [ngClass]="{'
     default-state': !email.touched,
     'invalid-state': email.touched && email.invalid,
-    'valid-state': email.touched && email.valid}"
+    'default-state': email.touched && email.valid}"
     required>
    
     <input 
@@ -19,7 +19,7 @@
     [ngClass]="{'
     default-state': !pasw.touched,
     'invalid-state': pasw.touched && pasw.invalid,
-    'valid-state': pasw.touched && pasw.valid}"
+    'default-state': pasw.touched && pasw.valid}"
     required>
 </form>
 

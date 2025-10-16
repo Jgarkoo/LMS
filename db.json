@@ -1,12 +1,24 @@
 {
   "students": [
     {
-      "id": "6ec6",
+      "id": "2e66",
       "name": "luka",
       "lastName": "jgharkava",
+      "date": "2010-06-17",
+      "grade": "10",
       "mail": "lukaj@example.com",
-      "password": "luka1234",
-      "confirmPassword": "luka1234"
+      "password": "lukaj1234",
+      "confirmPassword": "lukaj1234"
+    },
+    {
+      "id": "e1a7",
+      "name": "saba",
+      "lastName": "abdulaev",
+      "date": "2018-09-14",
+      "grade": "2",
+      "mail": "saba@example.com",
+      "password": "sabaa1234",
+      "confirmPassword": "sabaa1234"
     }
   ],
   "teachers": []
