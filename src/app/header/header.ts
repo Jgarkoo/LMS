@@ -2,6 +2,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { Observable, timer, map, filter, Subscription } from 'rxjs';
+import { Student } from '../service/student';
 
 @Component({
   selector: 'app-header',
@@ -13,9 +14,10 @@ export class Header implements OnInit,  OnDestroy {
 
   currentDateTime!: Observable<Date>;
   currentUrl = '';
-  private router = inject(Router);
   sub = new Subscription();
-
+  private router = inject(Router);
+  private service = inject(Student);  
+  
   ngOnInit(): void {
     this.currentDateTime = timer(0, 1000).pipe(map(() => new Date()));
 
@@ -28,6 +30,11 @@ export class Header implements OnInit,  OnDestroy {
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+
+  logout() {
+    this.service.logout();
+    this.router.navigate(['/login']);
   }
 
   get isLoginPage(): boolean {

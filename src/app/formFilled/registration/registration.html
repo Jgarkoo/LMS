@@ -51,7 +51,7 @@
         type="text" 
         id="mail"
         placeholder="email" 
-        formControlName="mail" 
+        formControlName="email" 
         [ngClass]="{
         'default-state': !email.touched,
         'invalid-state': email.touched && email.invalid,
@@ -79,5 +79,40 @@
         'invalid-state': cpasw.touched && cpasw.invalid,
         'valid-state': cpasw.touched && cpasw.valid}"
         required>
+        
+        <form formGroupName="subjects" class="subjects-section">
+            <legend>
+                Select your subjects
+            </legend>
+            <div class="subjects-grid">
+                <label>
+                    <input type="checkbox" formControlName="math"/> Math
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="physics"/> Physics
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="chemistry"/> Chemistry
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="biology"/> Biology
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="history"/> History
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="geography"/> Geography
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="english"/> English
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="literature"/> Literature
+                </label>
+                <label>
+                    <input type="checkbox" formControlName="art"/> Art
+                </label>
+        </div>
+    </form>
     </div>
 </form>

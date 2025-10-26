@@ -5,14 +5,13 @@ import { Student } from '../../service/student';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-log-in-form',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './log-in-form.html',
   styleUrl: './log-in-form.scss'
 })
-export class LogInForm  implements OnInit, OnDestroy{
+export class LogInForm  implements OnDestroy{
 
   logInAsStudent: boolean = false;
 
@@ -22,43 +21,41 @@ export class LogInForm  implements OnInit, OnDestroy{
 
 
   logInStudentForm: FormGroup = new FormGroup({
-    mail: new FormControl('',[Validators.required, Validators.email]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)])
   });
 
-  ngOnInit(): void {
-  }
+  
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe(); 
   }
 
-logIn() {
+  logIn() {
     if (!this.logInStudentForm.valid) {
-      console.warn('Form invalid');
-      this.logInStudentForm.markAllAsTouched();
       return;
     }
 
-    const { mail, password } = this.logInStudentForm.value;
+    const { email, password } = this.logInStudentForm.value;
 
-    const logInStudent = this.service.logIn(mail!, password!).subscribe({
-      next: (res) => {
-        if (res.length > 0) {
-          console.log('Login successful');
-          localStorage.setItem('isLoggedIn', 'true');
+     const sub = this.service.logIn(email!, password!).subscribe({
+      next: (student) => {
+        if (student) {
+          localStorage.setItem('studentToken', JSON.stringify(student));
+          this.service.currentStudent = student;
           this.router.navigate(['/student-page']);
-          this.logInStudentForm.reset();
+          alert('log in successful!')
         } else {
-          console.warn('Invalid email or password');
+          alert('Invalid email or password');
         }
       },
       error: (err) => {
-        console.log('Login failed', err);
+        console.error('Login failed:', err);
+        alert('Error logging in');
       }
     });
 
-    this.subscription.add(logInStudent);
+    this.subscription.add(sub);
   }
 
   showRegistration(){
@@ -66,7 +63,7 @@ logIn() {
   }
   
   get email(){
-    return this.logInStudentForm.controls['mail']
+    return this.logInStudentForm.controls['email']
   }
 
   get pasw(){

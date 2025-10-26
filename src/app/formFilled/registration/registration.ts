@@ -27,44 +27,44 @@ export class Registration implements OnInit, OnDestroy{
     lastName: new FormControl('',[Validators.required, Validators.minLength(3)]),
     date: new FormControl('',[Validators.required, Validators.minLength(3)]),
     grade: new FormControl('',[Validators.required, Validators.minLength(1)]),
-    mail: new FormControl('',[Validators.required, Validators.email]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)]),
-    confirmPassword: new FormControl('',[Validators.required, Validators.minLength(6)])
+    confirmPassword: new FormControl('',[Validators.required, Validators.minLength(6)]),
+  
+    subjects: new FormGroup({
+      math: new FormControl(false),
+      physics: new FormControl(false),
+      chemistry: new FormControl(false),
+      biology: new FormControl(false),
+      history: new FormControl(false),
+      geography: new FormControl(false),
+      english: new FormControl(false),
+      literature: new FormControl(false),
+      art: new FormControl(false),
+    })
   });
 
-  ngOnInit(): void {
-    this.addStudent();
-  } 
+  ngOnInit(): void {} 
   
   ngOnDestroy(): void {
     this.subscription.unsubscribe(); 
   }
 
   addStudent() {
-    if (!this.registerStudentForm.valid) {
-      console.warn('Form invalid');
-      this.registerStudentForm.markAllAsTouched();
-      return;
-    }
+  if (!this.registerStudentForm.valid) return;
 
-    const request: students = {
-      ...(this.registerStudentForm.value as students)
-    };
+  const request: students = { ...(this.registerStudentForm.value as students) };
 
-    const regStud = this.service.register(request).subscribe({
-      next: (res) => {
-        console.log('Registered successfully');
-        this.registerStudentForm.reset();
-        localStorage.setItem('isLoggedIn', 'true');
-        this.router.navigate(['/student-page']);
-      },
-      error: (err) => {
-        console.log('Registration failed', err);
-      }
-    });
+  const regStud = this.service.register(request).subscribe({
+    next: () => {
+      this.registerStudentForm.reset();
+      this.router.navigate(['/student-page']);
+    },
+    error: (err) => console.log(err)
+  });
 
-    this.subscription.add(regStud);
-  }
+  this.subscription.add(regStud);
+}
 
   showRegistration(){
     this.logInAsStudent = !this.logInAsStudent;
@@ -79,7 +79,7 @@ export class Registration implements OnInit, OnDestroy{
   }
 
   get email(){
-    return this.registerStudentForm.controls['mail']
+    return this.registerStudentForm.controls['email']
   }
 
   get pasw(){

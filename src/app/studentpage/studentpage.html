@@ -1,1 +1,8 @@
-<p>studentpage works!</p>
+@if (student) {
+  <div class="student-info">
+    <h2>Welcome, {{ student.name }}!</h2>
+    <p><strong>last name:</strong> {{ student.lastName }}</p>
+    <p><strong>Grade:</strong> {{ student.grade }}</p>
+    <p><strong>Birthdate:</strong> {{ student.date }}</p>
+  </div>
+}

@@ -1,7 +1,7 @@
 export interface teachers {
     name: string
     lastName: string
-    mail: string
+    email: string
     password: string
     
 }

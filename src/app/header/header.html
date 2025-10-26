@@ -33,7 +33,14 @@
   }  @else if(studentPage){
     <header class="login-header">
       <div class="header-left">
-        <a [routerLink]="['/home']">Back to Home</a>
+        <a [routerLink]="['/home']" class="log-out-btn">
+          <span id="dot">
+            &#x2022;
+          </span>
+          <span id="logOut">
+            Log Out
+          </span>
+        </a>
       </div>
       <div class="header-right">
         <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>

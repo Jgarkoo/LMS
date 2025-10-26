@@ -36,6 +36,26 @@ form{
             width: 300px;
             font-size: 16px;
         }
+        .subjects-section {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            legend {
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .subjects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+        }
     }
 }
 

@@ -5,14 +5,14 @@
       @if (!logInAsStudent){
         <app-log-in-form #logInFormComp></app-log-in-form>
         <div class="buttons">
-          <button type="submit" id="log-in-button" (click)="onSubmit()">Log In</button>
+          <button type="submit" id="log-in-button" (click)="onLoginSubmit()">Log In</button>
           <button type="button" id="register-button" (click)="showRegistration()">Register</button>
       </div>
       } @else {
         <button (click)="showRegistration()" id="go-back">&#8249;</button>
         <app-registration #registrationComp></app-registration>
         <div class="buttons">
-          <button type="submit" id="submit-button" (click)="onSubmit()">Submit</button>
+          <button type="submit" id="submit-button" (click)="onRegisterSubmit()">Submit</button>
       </div>
       }
     </div>

@@ -20,20 +20,14 @@ export class LogIn implements OnInit {
 
   private router = inject(Router)
 
-  ngOnInit() {
-    
+  ngOnInit() {}
+
+   onLoginSubmit() {
+    this.LogInFormComponent.logIn();
   }
 
-  onSubmit() {
-    if (this.logInAsStudent) {
-     
-      this.registrationComponent.addStudent();
-    } else {
-      this.LogInFormComponent.logIn();
-      if(this.LogInFormComponent){
-      this.router.navigate(['/student-page']);
-      }
-    }
+  onRegisterSubmit() {
+    this.registrationComponent.addStudent();
   }
 
   showRegistration(){

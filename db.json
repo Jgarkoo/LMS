@@ -6,7 +6,7 @@
       "lastName": "jgharkava",
       "date": "2010-06-17",
       "grade": "10",
-      "mail": "lukaj@example.com",
+      "email": "lukaj@example.com",
       "password": "lukaj1234",
       "confirmPassword": "lukaj1234"
     },
@@ -16,9 +16,19 @@
       "lastName": "abdulaev",
       "date": "2018-09-14",
       "grade": "2",
-      "mail": "saba@example.com",
+      "email": "saba@example.com",
       "password": "sabaa1234",
       "confirmPassword": "sabaa1234"
+    },
+    {
+      "id": "ab65",
+      "name": "john",
+      "lastName": "jgharkava",
+      "date": "2018-04-16",
+      "grade": "2",
+      "email": "john@example.com",
+      "password": "john1234",
+      "confirmPassword": "john1234"
     }
   ],
   "teachers": []

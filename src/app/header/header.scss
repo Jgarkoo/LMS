@@ -21,6 +21,36 @@ header{
                 border-color: #d9e6e6;
             }
         }
+        
+        .log-out-btn{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px 17px;
+            border-radius: 25px;
+            background: linear-gradient(to right, #424d64 50%, rgb(68, 68, 255) 50%);
+            background-size: 200% 100%; 
+            background-position: 0 0;           
+            color: white;
+            text-decoration: none;
+            transition: background-position 0.5s ease, bacground-color 0.5s ease;
+            #dot{
+                color: rgb(68, 68, 255);
+                size: 200% 100%; 
+                position: 0 0;  
+                text-decoration: none;
+                transition: position 0.5s ease, color 0.5s ease;
+            }
+            &:hover{
+                background-position: -100% 0;
+                background-color: rgb(68, 68, 255);
+                #dot{
+                    color: #424d64;
+                    position: -100% 0;
+                }
+            }
+        }
     }
     .header-right{
         display: flex;
