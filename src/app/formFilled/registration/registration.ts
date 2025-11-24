@@ -1,15 +1,16 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { students } from '../../interface/student';
 import { Student } from '../../service/student';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-
+import { MatSelect, MatOption } from '@angular/material/select';
+import { MatDatepicker, MatDatepickerToggle, MatDatepickerInput } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-registration',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, MatSelect, MatOption, MatDatepicker, MatDatepickerToggle, MatDatepickerInput],
   templateUrl: './registration.html',
   styleUrl: './registration.scss'
 })
@@ -19,8 +20,8 @@ export class Registration implements OnInit, OnDestroy{
   logInAsStudent: boolean = false;
 
   private router = inject(Router)
-  private service = inject(Student);
-  subscription: Subscription = new Subscription();
+  private service = inject(Student)
+  subscription: Subscription = new Subscription()
 
   registerStudentForm: FormGroup = new FormGroup({
     name: new FormControl('',[Validators.required, Validators.minLength(3)]),
@@ -30,18 +31,7 @@ export class Registration implements OnInit, OnDestroy{
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)]),
     confirmPassword: new FormControl('',[Validators.required, Validators.minLength(6)]),
-  
-    subjects: new FormGroup({
-      math: new FormControl(false),
-      physics: new FormControl(false),
-      chemistry: new FormControl(false),
-      biology: new FormControl(false),
-      history: new FormControl(false),
-      geography: new FormControl(false),
-      english: new FormControl(false),
-      literature: new FormControl(false),
-      art: new FormControl(false),
-    })
+    subjects: new FormControl('',[Validators.required])
   });
 
   ngOnInit(): void {} 
@@ -51,20 +41,20 @@ export class Registration implements OnInit, OnDestroy{
   }
 
   addStudent() {
-  if (!this.registerStudentForm.valid) return;
+    if (!this.registerStudentForm.valid) return;
 
-  const request: students = { ...(this.registerStudentForm.value as students) };
+    const request: students = { ...(this.registerStudentForm.value as students) };
 
-  const regStud = this.service.register(request).subscribe({
-    next: () => {
-      this.registerStudentForm.reset();
-      this.router.navigate(['/student-page']);
-    },
-    error: (err) => console.log(err)
-  });
+    const regStud = this.service.register(request).subscribe({
+      next: () => {
+        // this.registerStudentForm.reset();
+        this.router.navigate(['/student-page']);
+      },
+      error: (err) => console.log(err)
+    });
 
-  this.subscription.add(regStud);
-}
+    this.subscription.add(regStud);
+  }
 
   showRegistration(){
     this.logInAsStudent = !this.logInAsStudent;

@@ -29,6 +29,72 @@
       "email": "john@example.com",
       "password": "john1234",
       "confirmPassword": "john1234"
+    },
+    {
+      "id": "6f25",
+      "name": "jaba",
+      "lastName": "kankava",
+      "date": "2018-12-20",
+      "grade": "2",
+      "email": "jaba@example.com",
+      "password": "jabak1234",
+      "confirmPassword": "jabak1234",
+      "subjects": [
+        "math",
+        "physics",
+        "chemistry",
+        "english"
+      ]
+    },
+    {
+      "id": "1600",
+      "name": "joshua",
+      "lastName": "joshuaevich",
+      "date": "2018-08-29",
+      "grade": "2",
+      "email": "joshua@example.com",
+      "password": "joshua1234",
+      "confirmPassword": "joshua1234",
+      "subjects": [
+        "math",
+        "chemistry",
+        "history",
+        "art"
+      ]
+    },
+    {
+      "id": "0ba5",
+      "name": "cira",
+      "lastName": "ciraniom",
+      "date": "2018-12-11",
+      "grade": "2",
+      "email": "cira@example.com",
+      "password": "cirac1234",
+      "confirmPassword": "cirac1234",
+      "subjects": [
+        "physics",
+        "chemistry",
+        "geography",
+        "biology"
+      ]
+    },
+    {
+      "id": "b618",
+      "name": "eka",
+      "lastName": "ekaterine",
+      "date": "2018-08-25",
+      "grade": "2",
+      "email": "eka@example.com",
+      "password": "ekaterine1234",
+      "confirmPassword": "ekaterine1234",
+      "subjects": [
+        "math",
+        "physics",
+        "chemistry",
+        "history",
+        "geography",
+        "biology"
+      ]
     }
   ],
   "teachers": []

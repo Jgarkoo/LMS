@@ -26,16 +26,21 @@
         </div>
         <div class="date-grade">
             <input 
-            type="date" 
+            type="text" 
             id="birth-date"
-            placeholder="date" 
+            placeholder="Date"
             formControlName="date" 
+            matInput [matDatepicker]="picker"
             [ngClass]="{
             'default-state': !date.touched,
             'invalid-state': date.touched && date.invalid,
             'valid-state': date.touched && date.valid}"
             required>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
             
+
+
             <input 
             type="text" 
             id="grade"
@@ -80,39 +85,17 @@
         'valid-state': cpasw.touched && cpasw.valid}"
         required>
         
-        <form formGroupName="subjects" class="subjects-section">
-            <legend>
-                Select your subjects
-            </legend>
-            <div class="subjects-grid">
-                <label>
-                    <input type="checkbox" formControlName="math"/> Math
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="physics"/> Physics
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="chemistry"/> Chemistry
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="biology"/> Biology
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="history"/> History
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="geography"/> Geography
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="english"/> English
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="literature"/> Literature
-                </label>
-                <label>
-                    <input type="checkbox" formControlName="art"/> Art
-                </label>
-        </div>
-    </form>
+        <mat-select placeholder="choose your subjects" formControlName="subjects"  multiple>
+            <mat-option value="math">Math</mat-option>
+            <mat-option value="physics">Physics</mat-option>
+            <mat-option value="chemistry">Chemistry</mat-option>
+            <mat-option value="history">History</mat-option>
+            <mat-option value="geography">Geography</mat-option>
+            <mat-option value="biology">Biology</mat-option>
+            <mat-option value="english">English</mat-option>
+            <mat-option value="literature">Literature</mat-option>
+            <mat-option value="art">Art</mat-option>
+        </mat-select>
+        
     </div>
 </form>

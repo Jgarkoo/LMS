@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, ViewChild, inject } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Registration } from "../formFilled/registration/registration";
 import { LogInForm } from "../formFilled/log-in-form/log-in-form";
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './log-in.html',
   styleUrl: './log-in.scss'
 })
-export class LogIn implements OnInit {
+export class LogIn {
   
   logInAsStudent: boolean = false;
   regStudent: boolean = false;
@@ -20,14 +20,13 @@ export class LogIn implements OnInit {
 
   private router = inject(Router)
 
-  ngOnInit() {}
-
-   onLoginSubmit() {
+  onLoginSubmit() {
     this.LogInFormComponent.logIn();
   }
 
   onRegisterSubmit() {
     this.registrationComponent.addStudent();
+    this.router.navigate(['/student-page']);
   }
 
   showRegistration(){

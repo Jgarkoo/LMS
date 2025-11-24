@@ -1,8 +1,10 @@
 form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h1{
         margin-bottom: 40px;
-        margin-left: 50px;
     }
     .form-for-login{        
         display: flex;
@@ -28,6 +30,12 @@ form{
             #grade {
                 width: 140px;
             }
+            mat-datepicker-toggle,
+            mat-datepicker{
+                width: 100%;
+                position: absolute;
+                left: 40%;
+            }
         }
         input{
             padding: 10px;
@@ -36,41 +44,13 @@ form{
             width: 300px;
             font-size: 16px;
         }
-        .subjects-section {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 10px;
-            legend {
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
-            .subjects-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 10px;
-                label {
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-                }
-            }
+        mat-select {
+            padding: 7px 12px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;  
+            background-color: #FCFCFD;
         }
-    }
-}
-
-.reg-successfully{
-
-    a{
-        position: relative;
-        top: 18%;
-        left: 42%;
-        margin-top: 50px;
-        background-color: #0A7CFF;
-        border-radius: 5px;
-        padding: 6px 10px;
-        color: white;
-        text-decoration: none; 
     }
 }
 
@@ -80,7 +60,7 @@ form{
 }
 
 .invalid-state {
-    background-color:  #ffeef0, 
+    background-color: #ffeef0;
     
 }
 
@@ -90,15 +70,37 @@ form{
 
 @media (max-width: 678px){
     form{
-        width: 95%;
+        width: 100%;
         h1{
-            font-size: 25px;
-            margin-bottom: 40px;
+            font-size: 18px;
+            margin: 20px 0px 15px 0px;
         }
-        input{
-            padding: 6px;
-            width: 100%;
-            font-size: 12px;
+        .form-for-login{        
+            gap: 15px;
+            margin-top: 20px;  
+            .fullname,
+            .date-grade{
+                justify-content: center;
+                gap: 15px;
+                mat-datepicker-toggle,
+                mat-datepicker{
+                    left: 32%;
+                    top: 122px;
+                }
+                input{
+                    padding: 6px;
+                    width: 40% !important;
+                    font-size: 12px;
+                } 
+            }
+            #passWord,
+            #mail,
+            #confirm-password,
+            mat-select{
+                width: 86%;
+                padding: 6px;
+                font-size: 12px;
+            }
         }
     }
 
@@ -114,6 +116,15 @@ form{
             padding: 10px;
             width: 90%;
             font-size: 18px;
+        }
+        .form-for-login{
+            .date-grade{
+                mat-datepicker-toggle,
+                mat-datepicker{
+                    left: 36%;
+                    top: 200px;
+                }
+            }
         }
     }
 }

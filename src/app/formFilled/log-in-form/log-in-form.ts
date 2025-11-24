@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
 import {  FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Student } from '../../service/student';
 import { Subscription } from 'rxjs';
@@ -15,10 +15,10 @@ export class LogInForm  implements OnDestroy{
 
   logInAsStudent: boolean = false;
 
-  private router = inject(Router)
-  private service = inject(Student);
   subscription: Subscription = new Subscription();
 
+  private router = inject(Router)
+  private service = inject(Student);  
 
   logInStudentForm: FormGroup = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -32,30 +32,26 @@ export class LogInForm  implements OnDestroy{
   }
 
   logIn() {
-    if (!this.logInStudentForm.valid) {
-      return;
-    }
-
-    const { email, password } = this.logInStudentForm.value;
-
-     const sub = this.service.logIn(email!, password!).subscribe({
-      next: (student) => {
-        if (student) {
-          localStorage.setItem('studentToken', JSON.stringify(student));
-          this.service.currentStudent = student;
+    if (!this.logInStudentForm.valid) return;
+  
+    const { mail, password } = this.logInStudentForm.value;
+  
+   const sub =  this.service.logIn(mail!, password!).subscribe({
+      next: (res) => {
+        
+        if (res.length > 0) {
+          const loggedUser = res[0];
           this.router.navigate(['/student-page']);
-          alert('log in successful!')
+          this.service.setCurrentStudents(loggedUser);
         } else {
           alert('Invalid email or password');
         }
       },
       error: (err) => {
-        console.error('Login failed:', err);
-        alert('Error logging in');
+        console.log('Login failed', err); 
       }
     });
-
-    this.subscription.add(sub);
+     this.subscription.add(sub);
   }
 
   showRegistration(){

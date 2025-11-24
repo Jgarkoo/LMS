@@ -21,15 +21,12 @@ export class Student {
   
   
   constructor() {
-    this.studentURL = `http://localhost:3000/students`;
+    this.studentURL = `http://localhost:3000/`;
   }
-
-  logIn(mail: string, password: string): Observable<students | null> {
+  
+  logIn(mail: string, password: string): Observable<students[]> {
     return this.http
-      .get<students[]>(`${this.studentURL}?mail=${mail}&password=${password}`)
-      .pipe(
-        map((res) => (res.length > 0 ? res[0] : null))
-      );
+      .get<students[]>(`${this.studentURL}students?mail=${mail}&password=${password}`)
   }
 
   logout() {
@@ -38,11 +35,11 @@ export class Student {
   }
 
   register(data: students): Observable<students>{
-    return this.http.post<students>(`${this.studentURL}`, data)
+    return this.http.post<students>(`${this.studentURL}students`, data)
   }
 
   getSingleStudnet(id: string): Observable<students>{
-    return this.http.get<students>(`${this.studentURL}/${id}`)
+    return this.http.get<students>(`${this.studentURL}students/${id}`)
   }
 
   getCurrentStudent(): students | null {
@@ -55,4 +52,16 @@ export class Student {
     }
     return null;
   }
+
+  setCurrentStudents(user: students | null) {
+    if (user) {
+      this.currentStudent = user;
+      localStorage.setItem('user', JSON.stringify(user)); 
+    } else {
+      this.currentStudent = null;
+      localStorage.removeItem('user'); 
+    }
+  }
+
 }
+
