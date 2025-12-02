@@ -8,5 +8,5 @@ export interface students {
     grade: string
     email: string
     password: string
-    subject?: subjects[]
+    subjects?: subjects[]
 }

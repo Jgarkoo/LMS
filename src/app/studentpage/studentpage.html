@@ -1,8 +1,63 @@
 @if (student) {
-  <div class="student-info">
-    <h2>Welcome, {{ student.name }}!</h2>
-    <p><strong>last name:</strong> {{ student.lastName }}</p>
-    <p><strong>Grade:</strong> {{ student.grade }}</p>
-    <p><strong>Birthdate:</strong> {{ student.date }}</p>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="image-wrap">
+        <img src="img/img8.jpg" alt="Profile Image" />
+      </div>
+      <h2 class="name">{{ student.name }} {{ student.lastName }}</h2>
+      <div class="stats-box">
+        <div class="stat-item">
+          <p class="label">Name</p>
+          <p class="value"> {{student.name}} </p>
+        </div>
+        <div class="stat-item">
+          <p class="label">Last Name</p>
+          <p class="value"> {{student.lastName}} </p>
+        </div>
+        <div class="stat-item">
+          <p class="label">Date of Birth</p>
+          <p class="value"> {{ student.date | date:'dd.mm.yyyy' }}</p>
+        </div>
+        <div class="stat-item">
+          <p class="label">Email</p>
+          <p class="value"> {{student.email}} </p>
+        </div>
+        <div class="stat-item">
+          <p class="label">Grade</p>
+          <p class="value"> {{student.grade}} </p>
+        </div>
+        <div class="stat-item">
+          <p class="label">Phone Number</p>
+          <p class="value"> -- </p>
+        </div>
+        <div class="stat-item">
+          <p class="label">Address</p>
+          <p class="value"> -- </p>
+        </div>
+      </div>
+      <button class="edit-btn">Change information</button>
+    </div>
+    <div class="info-box">
+      <h3>Subjects</h3>
+      <span></span>
+      <div class="info-grid">
+          <div class="names">
+            <p>
+              subject
+            </p>
+            <p>
+              teacher
+            </p>
+            <p>
+              marks
+            </p>
+          </div>
+          @for (subject of student.subjects; track subject) {
+            <div class="marks">
+              <li>{{ subject }}</li>
+            </div>
+          }
+      </div>
+    </div>
   </div>
 }

@@ -18,7 +18,7 @@ export class LogInForm  implements OnDestroy{
   subscription: Subscription = new Subscription();
 
   private router = inject(Router)
-  private service = inject(Student);  
+  private service = inject(Student)
 
   logInStudentForm: FormGroup = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),

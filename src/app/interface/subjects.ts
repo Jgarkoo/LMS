@@ -13,37 +13,37 @@ export interface subjects {
 
 export interface math {
   id: number
-  boolean: false
+  math: string
 }
 export interface physics {
   id: number
-  boolean: false
+  physics: string
 }
 export interface chemistry {
   id: number
-  boolean: false
+  chemisrty: string
 }
 export interface biology {
   id: number
-  boolean: false
+  biology: string
 }
 export interface history {
   id: number
-  boolean: false
+  history: string
 }
 export interface geography {
   id: number
-  boolean: false
+  geography: string
 }
 export interface english {
   id: number
-  boolean: false
+  english: string
 }
 export interface literature {
   id: number
-  boolean: false
+  literature: string
 }
 export interface art {
   id: number
-  boolean: false
+  art: string
 }

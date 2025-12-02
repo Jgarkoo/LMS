@@ -53,13 +53,13 @@ export class Student {
     return null;
   }
 
-  setCurrentStudents(user: students | null) {
-    if (user) {
-      this.currentStudent = user;
-      localStorage.setItem('user', JSON.stringify(user)); 
+  setCurrentStudents(student: students | null) {
+    if (student) {
+      this.currentStudent = student;
+      localStorage.setItem('studentToken', JSON.stringify(student)); 
     } else {
       this.currentStudent = null;
-      localStorage.removeItem('user'); 
+      localStorage.removeItem('studentToken'); 
     }
   }
 

@@ -26,7 +26,7 @@ export class LogIn {
 
   onRegisterSubmit() {
     this.registrationComponent.addStudent();
-    this.router.navigate(['/student-page']);
+    this.logInAsStudent = !this.logInAsStudent;
   }
 
   showRegistration(){

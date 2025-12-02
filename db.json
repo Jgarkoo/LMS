@@ -4,11 +4,17 @@
       "id": "2e66",
       "name": "luka",
       "lastName": "jgharkava",
-      "date": "2010-06-17",
-      "grade": "10",
+      "date": "2018-06-17",
+      "grade": "2",
       "email": "lukaj@example.com",
       "password": "lukaj1234",
-      "confirmPassword": "lukaj1234"
+      "confirmPassword": "lukaj1234",
+      "subjects": [
+        "math",
+        "biology",
+        "literature",
+        "art"
+      ]
     },
     {
       "id": "e1a7",
@@ -18,7 +24,13 @@
       "grade": "2",
       "email": "saba@example.com",
       "password": "sabaa1234",
-      "confirmPassword": "sabaa1234"
+      "confirmPassword": "sabaa1234",
+      "subjects": [
+        "math",
+        "history",
+        "biology",
+        "art"
+      ]
     },
     {
       "id": "ab65",
@@ -28,7 +40,14 @@
       "grade": "2",
       "email": "john@example.com",
       "password": "john1234",
-      "confirmPassword": "john1234"
+      "confirmPassword": "john1234",
+      "subjects": [
+        "math",
+        "history",
+        "biology",
+        "literature",
+        "art"
+      ]
     },
     {
       "id": "6f25",
@@ -94,6 +113,38 @@
         "history",
         "geography",
         "biology"
+      ]
+    },
+    {
+      "id": "c9c9",
+      "name": "nini",
+      "lastName": "jgharkava",
+      "date": "2018-03-22T20:00:00.000Z",
+      "grade": "2",
+      "email": "nini@example.com",
+      "password": "niniko1234",
+      "confirmPassword": "niniko1234",
+      "subjects": [
+        "history",
+        "biology",
+        "literature",
+        "art"
+      ]
+    },
+    {
+      "id": "8efa",
+      "name": "givi",
+      "lastName": "givitia",
+      "date": "2018-12-18T20:00:00.000Z",
+      "grade": "2",
+      "email": "givi@example.com",
+      "password": "givig1234",
+      "confirmPassword": "givig1234",
+      "subjects": [
+        "math",
+        "physics",
+        "chemistry",
+        "geography"
       ]
     }
   ],

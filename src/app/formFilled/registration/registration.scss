@@ -32,7 +32,6 @@ form{
             }
             mat-datepicker-toggle,
             mat-datepicker{
-                width: 100%;
                 position: absolute;
                 left: 40%;
             }
@@ -86,6 +85,7 @@ form{
                 mat-datepicker{
                     left: 32%;
                     top: 122px;
+                    width: 15%;
                 }
                 input{
                     padding: 6px;

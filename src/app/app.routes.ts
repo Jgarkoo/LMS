@@ -31,7 +31,8 @@ export const routes: Routes = [
     {
         path: 'student-page',
         title: 'student page',
-        canActivate: [authGuard],
+        canActivate:[authGuard],
+        canLoad:[authGuard],
         loadComponent: () => import ('./studentpage/studentpage').then(m=>m.Studentpage)
     },
 

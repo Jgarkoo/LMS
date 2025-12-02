@@ -1,5 +1,5 @@
 @if (!errorPage) {
-  @if (homePage) {
+  @if (homePage || logInRegister) {
     <header>
       <div class="header-left">
         <a id="homepg" [routerLink]="['/home']">Home Page</a>
@@ -21,7 +21,7 @@
         <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
       </div>
     </header>
-  } @else if (logInRegister) {
+  <!-- } @else if (logInRegister) {
     <header class="login-header">
       <div class="header-left">
         <a [routerLink]="['/home']">Back to Home</a>
@@ -29,7 +29,7 @@
       <div class="header-right">
         <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
       </div>
-    </header>
+    </header> -->
   }  @else if(studentPage){
     <header class="login-header">
       <div class="header-left">

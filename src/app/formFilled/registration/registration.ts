@@ -47,8 +47,7 @@ export class Registration implements OnInit, OnDestroy{
 
     const regStud = this.service.register(request).subscribe({
       next: () => {
-        // this.registerStudentForm.reset();
-        this.router.navigate(['/student-page']);
+        this.registerStudentForm.reset();
       },
       error: (err) => console.log(err)
     });
