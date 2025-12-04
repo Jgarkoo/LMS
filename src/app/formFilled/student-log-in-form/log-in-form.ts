@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, OnDestroy, inject } from '@angular/core';
 import {  FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Student } from '../../service/student';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in-form',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, NgClass],
   templateUrl: './log-in-form.html',
   styleUrl: './log-in-form.scss'
 })
@@ -25,20 +25,20 @@ export class LogInForm  implements OnDestroy{
     password: new FormControl('',[Validators.required, Validators.minLength(6)])
   });
 
-  
+
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe(); 
+    this.subscription.unsubscribe();
   }
 
   logIn() {
     if (!this.logInStudentForm.valid) return;
-  
+
     const { mail, password } = this.logInStudentForm.value;
-  
+
    const sub =  this.service.logIn(mail!, password!).subscribe({
       next: (res) => {
-        
+
         if (res.length > 0) {
           const loggedUser = res[0];
           this.router.navigate(['/student-page']);
@@ -48,7 +48,7 @@ export class LogInForm  implements OnDestroy{
         }
       },
       error: (err) => {
-        console.log('Login failed', err); 
+        console.log('Login failed', err);
       }
     });
      this.subscription.add(sub);
@@ -57,7 +57,7 @@ export class LogInForm  implements OnDestroy{
   showRegistration(){
     this.logInAsStudent = !this.logInAsStudent;
   }
-  
+
   get email(){
     return this.logInStudentForm.controls['email']
   }

@@ -12,7 +12,7 @@
         <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
       </div>
     </header>
-  } @else if (isLoginPage) {
+  } @else if (isLoginPage || teacherLogIn) {
     <header class="login-header">
       <div class="header-left">
         <a [routerLink]="['/home']">Back to Home</a>
@@ -21,16 +21,7 @@
         <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
       </div>
     </header>
-  <!-- } @else if (logInRegister) {
-    <header class="login-header">
-      <div class="header-left">
-        <a [routerLink]="['/home']">Back to Home</a>
-      </div>
-      <div class="header-right">
-        <span id="clock">{{ currentDateTime | async | date:'M/d/yy, h:mm a' }}</span>
-      </div>
-    </header> -->
-  }  @else if(studentPage){
+  }  @else if(studentPage || teacherPage){
     <header class="login-header">
       <div class="header-left">
         <a [routerLink]="['/home']" class="log-out-btn">

@@ -10,7 +10,7 @@ header{
         margin-left: 2%;
         a{
             cursor: pointer;
-            font-weight: bold; 
+            font-weight: bold;
             text-decoration: none;
             color: #424d64;
             padding: 10px 17px;
@@ -21,7 +21,7 @@ header{
                 border-color: #d9e6e6;
             }
         }
-        
+
         .log-out-btn{
             display: flex;
             align-items: center;
@@ -30,15 +30,15 @@ header{
             padding: 10px 17px;
             border-radius: 25px;
             background: linear-gradient(to right, #424d64 50%, rgb(68, 68, 255) 50%);
-            background-size: 200% 100%; 
-            background-position: 0 0;           
+            background-size: 200% 100%;
+            background-position: 0 0;
             color: white;
             text-decoration: none;
             transition: background-position 0.5s ease, bacground-color 0.5s ease;
             #dot{
                 color: rgb(68, 68, 255);
-                size: 200% 100%; 
-                position: 0 0;  
+                size: 200% 100%;
+                position: 0 0;
                 text-decoration: none;
                 transition: position 0.5s ease, color 0.5s ease;
             }
@@ -64,15 +64,15 @@ header{
             padding: 10px 17px;
             border-radius: 25px;
             background: linear-gradient(to right, #424d64 50%, rgb(68, 68, 255) 50%);
-            background-size: 200% 100%; 
-            background-position: 0 0;           
+            background-size: 200% 100%;
+            background-position: 0 0;
             color: white;
             text-decoration: none;
             transition: background-position 0.5s ease, bacground-color 0.5s ease;
             #dot{
                 color: rgb(68, 68, 255);
-                size: 200% 100%; 
-                position: 0 0;  
+                size: 200% 100%;
+                position: 0 0;
                 text-decoration: none;
                 transition: position 0.5s ease, color 0.5s ease;
             }
@@ -112,14 +112,14 @@ header{
         .header-right{
             gap: 15px;
             a{
-                padding: 8px 12px;
+                padding: 6px 12px;
                 font-size: 10px;
                 #dot{
                     display: none;
                 }
             }
             #clock{
-                padding: 8px 12px;
+                padding: 6px 12px;
                 font-size: 10px;
             }
         }
@@ -153,5 +153,5 @@ header{
             }
         }
     }
-    
+
 }

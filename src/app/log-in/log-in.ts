@@ -1,7 +1,7 @@
 import { Component, ViewChild, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Registration } from "../formFilled/registration/registration";
-import { LogInForm } from "../formFilled/log-in-form/log-in-form";
+import { LogInForm } from "../formFilled/student-log-in-form/log-in-form";
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
   styleUrl: './log-in.scss'
 })
 export class LogIn {
-  
+
   logInAsStudent: boolean = false;
   regStudent: boolean = false;
-  
+
   @ViewChild('registrationComp') registrationComponent!: Registration;
   @ViewChild('logInFormComp') LogInFormComponent!: LogInForm;
 

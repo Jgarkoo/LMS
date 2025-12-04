@@ -36,14 +36,27 @@ export const routes: Routes = [
         loadComponent: () => import ('./studentpage/studentpage').then(m=>m.Studentpage)
     },
 
-    { 
-        path: '404', 
+    {
+      path: 'teacher-LogIn',
+      title: 'teacher Log In Page',
+      loadComponent: () => import ('./teacher-login/teacher-login').then(m=>m.TeacherLogin)
+    },
+
+    {
+      path: 'teacher-page',
+      title: 'teacher Page',
+      loadComponent: () => import ('./teacher-page/teacher-page').then(m=>m.TeacherPage),
+      canActivate:[authGuard]
+    },
+
+    {
+        path: '404',
         title: 'Error Page',
         loadComponent: () => import('./error/error').then(m => m.Error)
     },
 
-    { 
-        path: '**', 
+    {
+        path: '**',
         redirectTo: '404'
     }
 ];

@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 85vh;
+  img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .teacher-login-container {
+    position: absolute;
+    border: 1px solid grey;
+    border-width: 0px 0px 1px 0px;
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(220, 223, 224, 0.65);
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    top: 250px;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button{
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #008543;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      &:hover{
+        transition: 0.3s;
+        background-color: #00b318;
+      }
+    }
+    #tl-form{
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 678px){
+  .container {
+    min-height: 80vh;
+    img{
+    }
+    .teacher-login-container {
+      width: 75%;
+      top: 100px;
+      padding: 30px 15px;
+      button{
+        margin-top: 10px;
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+      #tl-form{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 679px){
+  .container {
+    min-height: 80vh;
+    .teacher-login-container {
+      width: 60%;
+      top: 150px;
+      padding: 30px 5px;
+      button{
+        margin-top: 10px;
+        padding: 8px 12px;
+      }
+      #tl-form{
+        width: 100%;
+      }
+    }
+  }
+}

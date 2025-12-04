@@ -16,8 +16,8 @@ export class Header implements OnInit,  OnDestroy {
   currentUrl = '';
   sub = new Subscription();
   private router = inject(Router);
-  private service = inject(Student);  
-  
+  private service = inject(Student);
+
   ngOnInit(): void {
     this.currentDateTime = timer(0, 1000).pipe(map(() => new Date()));
 
@@ -55,5 +55,13 @@ export class Header implements OnInit,  OnDestroy {
 
   get studentPage(): boolean {
     return this.currentUrl.includes('/student-page');
+  }
+
+  get teacherLogIn(): boolean {
+  return this.currentUrl.includes('/teacher-LogIn');
+  }
+
+  get teacherPage(): boolean {
+    return this.currentUrl.includes('/teacher-page');
   }
 }

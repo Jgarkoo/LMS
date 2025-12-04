@@ -148,5 +148,12 @@
       ]
     }
   ],
-  "teachers": []
+  "teachers": [
+    {
+      "name": "nani",
+      "lastName": "topuria",
+      "email": "nani@example.com",
+      "password": "nani1234"
+    }
+  ]
 }

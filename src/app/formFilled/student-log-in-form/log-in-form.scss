@@ -24,7 +24,11 @@ form{
 }
 
 .invalid-state {
-    background-color:  #ffeef0, 
+    background-color:  #ffeef0;
+}
+
+.valid-state {
+    background-color: white;
 }
 
 @media (max-width: 678px){
