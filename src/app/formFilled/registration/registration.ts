@@ -1,12 +1,13 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { students } from '../../interface/student';
 import { Student } from '../../service/student';
-import { Subscription } from 'rxjs';
+import {Subscription, take} from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatSelect, MatOption } from '@angular/material/select';
 import { MatDatepicker, MatDatepickerToggle, MatDatepickerInput } from '@angular/material/datepicker';
+import { SubjectItem } from '../../interface/subjects';
+import { Subjects } from '../../service/subjects';
 
 @Component({
   selector: 'app-registration',
@@ -16,11 +17,11 @@ import { MatDatepicker, MatDatepickerToggle, MatDatepickerInput } from '@angular
 })
 export class Registration implements OnInit, OnDestroy{
 
-  registerContent: boolean = false;
   logInAsStudent: boolean = false;
+  subjectList: SubjectItem[] = [];
 
-  private router = inject(Router)
   private service = inject(Student)
+  private subjService = inject(Subjects)
   subscription: Subscription = new Subscription()
 
   registerStudentForm: FormGroup = new FormGroup({
@@ -31,29 +32,50 @@ export class Registration implements OnInit, OnDestroy{
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)]),
     confirmPassword: new FormControl('',[Validators.required, Validators.minLength(6)]),
-    subjects: new FormControl('',[Validators.required])
+    subjectIds: new FormControl<number[]>([], Validators.required)
   });
 
-  ngOnInit(): void {} 
-  
+  ngOnInit(): void {
+    this.fetchSubjects();
+  }
+
   ngOnDestroy(): void {
-    this.subscription.unsubscribe(); 
+    this.subscription.unsubscribe();
   }
 
   addStudent() {
     if (!this.registerStudentForm.valid) return;
 
-    const request: students = { ...(this.registerStudentForm.value as students) };
+    const {
+      confirmPassword,
+      ...formValue
+    } = this.registerStudentForm.value;
 
-    const regStud = this.service.register(request).subscribe({
+    const newStudent: students = {
+      ...formValue,
+      subjectIds: formValue.subjectIds
+    };
+
+     this.service.register(newStudent).pipe(take(1)).subscribe({
       next: () => {
         this.registerStudentForm.reset();
       },
       error: (err) => console.log(err)
     });
 
-    this.subscription.add(regStud);
   }
+
+  fetchSubjects() {
+    const sub = this.subjService.getSubjects().subscribe({
+      next: (res: SubjectItem[]) => {
+        this.subjectList = res;
+      },
+      error: (err) => console.log(err)
+    });
+
+    this.subscription.add(sub);
+  }
+
 
   showRegistration(){
     this.logInAsStudent = !this.logInAsStudent;

@@ -1,6 +1,6 @@
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import {BehaviorSubject, map, Observable} from 'rxjs';
 import { students } from '../interface/student';
 
 @Injectable({
@@ -13,7 +13,6 @@ export class Student {
 
   private http = inject(HttpClient);
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
-  isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
   private hasToken(): boolean {
     return !!localStorage.getItem('studentToken');
@@ -59,5 +58,14 @@ export class Student {
     }
   }
 
-}
+  getStudentsBySubject(subjectId: number) {
+    return this.http.get<students[]>(`${this.studentURL}students`).pipe(
+      map(students =>
+        students.filter(s =>
+          Array.isArray(s.subjectIds) && s.subjectIds.includes(subjectId)
+        )
+      )
+    );
+  }
 
+}

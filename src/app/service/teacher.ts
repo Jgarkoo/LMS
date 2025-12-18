@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { teachers } from '../interface/teacher';
 import { Observable } from 'rxjs';
-import {students} from '../interface/student';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +25,7 @@ export class Teacher {
     return this.http.post<teachers[]>(`${this.teacherURL}teachers`, data)
   }
 
-  setCurrentteacher(teacher: teachers | null) {
+  setCurrentTeacher(teacher: teachers | null) {
     if (teacher) {
       this.currentTeacher = teacher;
       localStorage.setItem('teacherToken', JSON.stringify(teacher));
@@ -39,7 +38,7 @@ export class Teacher {
   getCurrentTeacher(): teachers | null {
     if (this.currentTeacher) return this.currentTeacher;
 
-    const saved = localStorage.getItem('studentToken');
+    const saved = localStorage.getItem('teacherToken');
     if (saved) {
       this.currentTeacher = JSON.parse(saved);
       return this.currentTeacher;

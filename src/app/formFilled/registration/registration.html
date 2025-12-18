@@ -1,101 +1,92 @@
 <form [formGroup]="registerStudentForm">
     <h1>Registration</h1>
     <div class="form-for-login">
-        <div class="fullname">
-            <input 
-            type="text" 
-            id="name"
-            placeholder="name" 
-            formControlName="name" 
-            [ngClass]="{
-            'default-state': !name.touched,
-            'invalid-state': name.touched && name.invalid,
-            'valid-state': name.touched && name.valid}"
-            required>
-            
-            <input 
-            type="text" 
-            id="last-Name"
-            placeholder="last-name"
-            formControlName="lastName" 
-            [ngClass]="{
-            'default-state': !lastname.touched,
-            'invalid-state': lastname.touched && lastname.invalid,
-            'valid-state': lastname.touched && lastname.valid}"
-            required>
-        </div>
-        <div class="date-grade">
-            <input 
-            type="text" 
-            id="birth-date"
-            placeholder="Date"
-            formControlName="date" 
-            matInput [matDatepicker]="picker"
-            [ngClass]="{
-            'default-state': !date.touched,
-            'invalid-state': date.touched && date.invalid,
-            'valid-state': date.touched && date.valid}"
-            required>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-            
+      <div class="fullname">
+        <input
+        type="text"
+        id="name"
+        placeholder="name"
+        formControlName="name"
+        [ngClass]="{
+        'default-state': !name.touched,
+        'invalid-state': name.touched && name.invalid,
+        'valid-state': name.touched && name.valid}"
+        required>
+
+        <input
+        type="text"
+        id="last-Name"
+        placeholder="last-name"
+        formControlName="lastName"
+        [ngClass]="{
+        'default-state': !lastname.touched,
+        'invalid-state': lastname.touched && lastname.invalid,
+        'valid-state': lastname.touched && lastname.valid}"
+        required>
+      </div>
+      <div class="date-grade">
+        <input
+        type="text"
+        id="birth-date"
+        placeholder="Date"
+        formControlName="date"
+        matInput [matDatepicker]="picker"
+        [ngClass]="{
+        'default-state': !date.touched,
+        'invalid-state': date.touched && date.invalid,
+        'valid-state': date.touched && date.valid}"
+        required>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
 
 
-            <input 
-            type="text" 
-            id="grade"
-            placeholder="grade"
-            formControlName="grade" 
-            [ngClass]="{
-            'default-state': !grade.touched,
-            'invalid-state': grade.touched && grade.invalid,
-            'valid-state': grade.touched && grade.valid}"
-            required>
-        </div>
-        <input 
-        type="text" 
+        <input
+        type="text"
+        id="grade"
+        placeholder="grade"
+        formControlName="grade"
+        [ngClass]="{
+        'default-state': !grade.touched,
+        'invalid-state': grade.touched && grade.invalid,
+        'valid-state': grade.touched && grade.valid}"
+        required>
+      </div>
+        <input
+        type="text"
         id="mail"
-        placeholder="email" 
-        formControlName="email" 
+        placeholder="email"
+        formControlName="email"
         [ngClass]="{
         'default-state': !email.touched,
         'invalid-state': email.touched && email.invalid,
         'valid-state': email.touched && email.valid}"
         required>
-        
-        <input 
-        type="password" 
+
+        <input
+        type="password"
         id="passWord"
-        placeholder="password" 
-        formControlName="password" 
+        placeholder="password"
+        formControlName="password"
         [ngClass]="{
         'default-state': !pasw.touched,
         'invalid-state': pasw.touched && pasw.invalid,
         'valid-state': pasw.touched && pasw.valid}"
         required>
-        
-        <input 
-        type="password" 
-        id="confirm-password" 
-        placeholder="Confirm password" 
-        formControlName="confirmPassword" 
+
+        <input
+        type="password"
+        id="confirm-password"
+        placeholder="Confirm password"
+        formControlName="confirmPassword"
         [ngClass]="{
         'default-state': !cpasw.touched,
         'invalid-state': cpasw.touched && cpasw.invalid,
         'valid-state': cpasw.touched && cpasw.valid}"
         required>
-        
-        <mat-select placeholder="choose your subjects" formControlName="subjects"  multiple>
-            <mat-option value="math">Math</mat-option>
-            <mat-option value="physics">Physics</mat-option>
-            <mat-option value="chemistry">Chemistry</mat-option>
-            <mat-option value="history">History</mat-option>
-            <mat-option value="geography">Geography</mat-option>
-            <mat-option value="biology">Biology</mat-option>
-            <mat-option value="english">English</mat-option>
-            <mat-option value="literature">Literature</mat-option>
-            <mat-option value="art">Art</mat-option>
+        <mat-select placeholder="choose your subjects" formControlName="subjectIds"  multiple>
+          @for (subj of subjectList; track subj.id){
+            <mat-option [value]="subj.id">{{ subj.subject_name }}</mat-option>
+          }
         </mat-select>
-        
     </div>
 </form>

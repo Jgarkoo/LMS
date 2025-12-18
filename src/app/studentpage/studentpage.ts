@@ -3,6 +3,8 @@ import {  Router } from '@angular/router';
 import { Student } from '../service/student';
 import { students } from '../interface/student';
 import { DatePipe } from '@angular/common';
+import {SubjectItem} from '../interface/subjects';
+import {Subjects} from '../service/subjects';
 
 @Component({
   selector: 'app-studentpage',
@@ -13,21 +15,38 @@ import { DatePipe } from '@angular/common';
 export class Studentpage  implements OnInit{
 
   student!: students
-
+  chosenSubj: SubjectItem[] = [];
   private router = inject(Router)
-  private service = inject(Student)
+  private studService = inject(Student)
+  private subjService = inject(Subjects)
 
   constructor(){
 
   }
 
   ngOnInit(): void {
-      const loggedInStudent = this.service.getCurrentStudent();
-      if (loggedInStudent) {
-        this.student = loggedInStudent;
-      } else {
-        this.router.navigate(['/log-in']);
-      }
+    const loggedInStudent = this.studService.getCurrentStudent();
+
+    if (!loggedInStudent) {
+      this.router.navigate(['/log-in']);
+      return;
+    }
+
+    this.student = loggedInStudent;
+
+    if (this.student.subjectIds?.length) {
+      this.loadStudentSubjects(this.student.subjectIds);
+    }
   }
 
+  private loadStudentSubjects(subjectIds: number[]) {
+    this.subjService.getSubjects().subscribe({
+      next: (res) => {
+        this.chosenSubj = res.filter(subj =>
+          subjectIds.includes(subj.id)
+        );
+      },
+      error: (err) => console.error(err)
+    });
+  }
 }

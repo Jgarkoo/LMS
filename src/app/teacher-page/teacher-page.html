@@ -1,1 +1,37 @@
-<p>teacher-page works!</p>
+@if (teacher) {
+  <div class="main-container">
+    <div class="teacher-container">
+      <div class="teacher-image">
+        <img src="img/img8.jpg" alt="">
+      </div>
+      <div class="teacher-info">
+        <div class="teacher">
+          <p>Name:</p>
+          <p>{{teacher.name}}</p>
+        </div>
+        <div class="teacher">
+          <p>Last Name:</p>
+          <p>{{teacher.lastName}}</p>
+        </div>
+        <div class="teacher">
+          <p>Email:</p>
+          <p>{{teacher.email}}</p>
+        </div>
+      </div>
+      <div>
+        <h2>Students for my subject</h2>
+
+        @if (students.length === 0) {
+          <p>No students yet</p>
+        }
+
+        @for (student of students; track student.id) {
+          <div class="student-card">
+            <p>{{ student.name }} {{ student.lastName }}</p>
+            <p>Grade: {{ student.grade }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

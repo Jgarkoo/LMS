@@ -94,12 +94,14 @@
               list-style: none;
               margin-top: 20px;
               cursor: pointer;
+              display: flex;
+              justify-content: space-between;
               &:hover{
                 transition: 0.3s;
                 transform: translateY(-3px);
                 background-color: #fcfdff;
               }
-              li{
+              p{
                 color: #5892ff;
               }
             }

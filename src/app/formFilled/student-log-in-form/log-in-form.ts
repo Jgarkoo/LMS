@@ -13,8 +13,6 @@ import { Router } from '@angular/router';
 })
 export class LogInForm  implements OnDestroy{
 
-  logInAsStudent: boolean = false;
-
   subscription: Subscription = new Subscription();
 
   private router = inject(Router)
@@ -24,7 +22,6 @@ export class LogInForm  implements OnDestroy{
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)])
   });
-
 
 
   ngOnDestroy(): void {
@@ -52,10 +49,6 @@ export class LogInForm  implements OnDestroy{
       }
     });
      this.subscription.add(sub);
-  }
-
-  showRegistration(){
-    this.logInAsStudent = !this.logInAsStudent;
   }
 
   get email(){

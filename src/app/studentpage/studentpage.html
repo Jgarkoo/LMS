@@ -52,9 +52,11 @@
               marks
             </p>
           </div>
-          @for (subject of student.subjects; track subject) {
+          @for (subject of chosenSubj; track subject.id) {
             <div class="marks">
-              <li>{{ subject }}</li>
+              <p>{{ subject.subject_name }}</p>
+              <p>—</p>
+              <p>—</p>
             </div>
           }
       </div>

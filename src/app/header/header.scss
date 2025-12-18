@@ -97,7 +97,7 @@ header{
 }
 
 
-@media screen and ( max-width: 768px ) {
+@media screen and ( max-width: 678px ) {
     header{
         padding: 10px 0px 10px 10px;
         width: 100%;
@@ -105,9 +105,10 @@ header{
         .header-left{
             margin-left: 0px;
             a{
-                padding: 8px 12px;
-                font-size: 12px;
+                padding: 6px 12px !important;
+                font-size: 10px;
             }
+
         }
         .header-right{
             gap: 15px;
@@ -126,7 +127,7 @@ header{
     }
 }
 
-@media screen and ( min-width: 769px ) and ( max-width: 1024px ) {
+@media screen and ( min-width: 679px ) and ( max-width: 1024px ) {
     header{
         padding: 10px 0px 10px 10px;
         width: 100%;

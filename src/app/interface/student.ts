@@ -1,5 +1,3 @@
-import { subjects } from "./subjects"
-
 export interface students {
     id: string
     name: string
@@ -8,5 +6,6 @@ export interface students {
     grade: string
     email: string
     password: string
-    subjects?: subjects[]
+    subjectIds: number[]
 }
+

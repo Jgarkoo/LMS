@@ -38,7 +38,7 @@ export class TlogInForm implements OnDestroy {
         if (res.length > 0) {
           const currentTeacher = res[0];
           this.router.navigate(['/teacher-page']);
-          this.tService.setCurrentteacher(currentTeacher);
+          this.tService.setCurrentTeacher(currentTeacher);
         }
       }})
 
