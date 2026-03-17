@@ -54,11 +54,20 @@
           </div>
           @for (subject of chosenSubj; track subject.id) {
             <div class="marks">
-              <p>{{ subject.subject_name }}</p>
-              <p>—</p>
-              <p>—</p>
+              <p> {{ subject.subject_name }} </p>
+              <p> {{ subject.teacher }} </p>
+              <p> {{ getMark(subject.id) }} </p>
             </div>
           }
+        <div class="gpa-box">
+          <p>
+            <strong>
+              GPA:
+            </strong>
+            <span [style.color]="getGPAColor()">{{ getGPA() }}
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   </div>

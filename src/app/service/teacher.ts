@@ -18,13 +18,12 @@ export class Teacher {
   }
 
   logIn(mail: string, password: string): Observable<teachers[]>{
-    return this.http.get<teachers[]>(`${this.teacherURL}teachers`)
+    return this.http.get<teachers[]>(`${this.teacherURL}teachers?mail=${mail}&password=${password}`)
   }
 
-  register(data: teachers): Observable<teachers[]>{
-    return this.http.post<teachers[]>(`${this.teacherURL}teachers`, data)
-  }
-
+    getTeachers(): Observable<teachers[]> {
+      return this.http.get<teachers[]>(`${this.teacherURL}teachers`);
+    }
   setCurrentTeacher(teacher: teachers | null) {
     if (teacher) {
       this.currentTeacher = teacher;

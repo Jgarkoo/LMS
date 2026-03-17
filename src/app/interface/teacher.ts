@@ -3,5 +3,6 @@ export interface teachers {
     lastName: string
     email: string
     password: string
-    subjectId: number
+    subjectId: string
+    id: string
 }

@@ -6,6 +6,6 @@ export interface students {
     grade: string
     email: string
     password: string
-    subjectIds: number[]
+    subjectIds: string[]
 }
 

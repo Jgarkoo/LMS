@@ -9,7 +9,7 @@
       "email": "lukaj@example.com",
       "password": "lukaj1234",
       "confirmPassword": "lukaj1234",
-      "subjects": [
+      "subjectIds": [
         "1",
         "4",
         "8",
@@ -25,7 +25,7 @@
       "email": "saba@example.com",
       "password": "sabaa1234",
       "confirmPassword": "sabaa1234",
-      "subjects": [
+      "subjectIds": [
         "1",
         "5",
         "4",
@@ -41,7 +41,7 @@
       "email": "john@example.com",
       "password": "john1234",
       "confirmPassword": "john1234",
-      "subjects": [
+      "subjectIds": [
         "1",
         "5",
         "4",
@@ -58,7 +58,7 @@
       "email": "jaba@example.com",
       "password": "jabak1234",
       "confirmPassword": "jabak1234",
-      "subjects": [
+      "subjectIds": [
         "1",
         "2",
         "3",
@@ -198,50 +198,229 @@
   ],
   "teachers": [
     {
-      "name": "nani",
-      "lastName": "topuria",
-      "email": "nani@example.com",
-      "password": "nani1234",
-      "id": "130d",
+      "name": "example",
+      "lastName": "math",
+      "email": "math@example.com",
+      "password": "math1234",
+      "id": "1",
+      "subjectId": "1"
+    },
+    {
+      "name": "example",
+      "lastName": "physic",
+      "email": "physic@example.com",
+      "password": "physic1234",
+      "id": "2",
       "subjectId": "2"
+    },
+    {
+      "name": "example",
+      "lastName": "chemistry",
+      "email": "chemistry@example.com",
+      "password": "chemistry1234",
+      "id": "3",
+      "subjectId": "3"
+    },
+    {
+      "name": "example",
+      "lastName": "biology",
+      "email": "biology@example.com",
+      "password": "biology1234",
+      "id": "4",
+      "subjectId": "4"
+    },
+    {
+      "name": "example",
+      "lastName": "history",
+      "email": "history@example.com",
+      "password": "history1234",
+      "id": "5",
+      "subjectId": "5"
+    },
+    {
+      "name": "example",
+      "lastName": "geography",
+      "email": "geography@example.com",
+      "password": "geography1234",
+      "id": "6",
+      "subjectId": "6"
+    },
+    {
+      "name": "example",
+      "lastName": "english",
+      "email": "english@example.com",
+      "password": "english1234",
+      "id": "7",
+      "subjectId": "7"
+    },
+    {
+      "name": "example",
+      "lastName": "lit",
+      "email": "lit@example.com",
+      "password": "literature1234",
+      "id": "8",
+      "subjectId": "8"
+    },
+    {
+      "name": "example",
+      "lastName": "art",
+      "email": "art@example.com",
+      "password": "artt1234",
+      "id": "9",
+      "subjectId": "9"
     }
   ],
   "subjects": [
     {
       "id": "1",
-      "subject_name": "math"
+      "subject_name": "math",
+      "subjectId": "1"
     },
     {
       "id": "2",
-      "subject_name": "physics"
+      "subject_name": "physics",
+      "subjectId": "2"
     },
     {
       "id": "3",
-      "subject_name": "chemistry"
+      "subject_name": "chemistry",
+      "subjectId": "3"
     },
     {
       "id": "4",
-      "subject_name": "biology"
+      "subject_name": "biology",
+      "subjectId": "4"
     },
     {
       "id": "5",
-      "subject_name": "history"
+      "subject_name": "history",
+      "subjectId": "5"
     },
     {
       "id": "6",
-      "subject_name": "geography"
+      "subject_name": "geography",
+      "subjectId": "6"
     },
     {
       "id": "7",
-      "subject_name": "english"
+      "subject_name": "english",
+      "subjectId": "7"
     },
     {
       "id": "8",
-      "subject_name": "literature"
+      "subject_name": "literature",
+      "subjectId": "8"
     },
     {
       "id": "9",
-      "subject_name": "art"
+      "subject_name": "art",
+      "subjectId": "9"
+    }
+  ],
+  "marks": [
+    {
+      "id": "m1",
+      "studentId": "s1",
+      "subjectId": "1",
+      "teacherId": "t1",
+      "value": 95,
+      "date": "2026-01-15"
+    },
+    {
+      "id": "8cc289a5-127e-4e30-a094-2db5c79228a7",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 32,
+      "date": "2026-03-13T16:15:02.372Z"
+    },
+    {
+      "id": "bdeee642-e989-4745-91a3-9b521b3b52e8",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 123,
+      "date": "2026-03-13T16:22:58.780Z"
+    },
+    {
+      "id": "673c552e-2a22-487c-b3d5-037d85113dc6",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 12,
+      "date": "2026-03-13T16:23:02.163Z"
+    },
+    {
+      "id": "a8719155-f5d5-4591-b69e-04ddd1ef6ab6",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 12,
+      "date": "2026-03-13T16:23:03.140Z"
+    },
+    {
+      "id": "8d73925f-b49b-4230-a415-6196337356b9",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 12,
+      "date": "2026-03-13T16:23:04.323Z"
+    },
+    {
+      "id": "d3c1c59f-fb17-4a29-9461-a5aacd3bb9e5",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 12,
+      "date": "2026-03-13T16:23:04.712Z"
+    },
+    {
+      "id": "fa89ed57-fd66-466e-b49a-4faaef9d2723",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 12,
+      "date": "2026-03-13T16:23:04.880Z"
+    },
+    {
+      "id": "553f5beb-f63f-4dc4-83fb-e3ab11199975",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 12,
+      "date": "2026-03-13T16:23:05.019Z"
+    },
+    {
+      "id": "32ba3a4e-4276-47a9-9a60-d1d8e4605580",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 15,
+      "date": "2026-03-13T16:23:10.443Z"
+    },
+    {
+      "id": "811f8307-4c06-4150-b20c-270c99a64028",
+      "studentId": "1600",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 15,
+      "date": "2026-03-13T16:23:10.832Z"
+    },
+    {
+      "id": "f3d40c98-6757-4eb1-93d4-748b70e1fb55",
+      "studentId": "2e66",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 21,
+      "date": "2026-03-14T14:18:38.574Z"
+    },
+    {
+      "id": "d1592cc4-61d5-4ccf-b94d-bd7146d12c71",
+      "studentId": "8efa",
+      "subjectId": "1",
+      "teacherId": "1",
+      "value": 51,
+      "date": "2026-03-16T15:41:10.696Z"
     }
   ]
 }

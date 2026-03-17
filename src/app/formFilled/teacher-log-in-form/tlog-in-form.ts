@@ -39,6 +39,8 @@ export class TlogInForm implements OnDestroy {
           const currentTeacher = res[0];
           this.router.navigate(['/teacher-page']);
           this.tService.setCurrentTeacher(currentTeacher);
+        } else {
+          alert('Invalid email or password');
         }
       }})
 

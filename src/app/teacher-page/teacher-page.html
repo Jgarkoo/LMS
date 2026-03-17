@@ -18,20 +18,50 @@
           <p>{{teacher.email}}</p>
         </div>
       </div>
-      <div>
+    </div>
+      <div class="students-grades">
         <h2>Students for my subject</h2>
-
         @if (students.length === 0) {
           <p>No students yet</p>
         }
-
-        @for (student of students; track student.id) {
-          <div class="student-card">
-            <p>{{ student.name }} {{ student.lastName }}</p>
-            <p>Grade: {{ student.grade }}</p>
+        <div class="name-bar">
+          <p>
+            name
+          </p>
+          <p>
+            Last Name
+          </p>
+          <p>
+            Grade
+          </p>
+          <p>
+            Marks
+          </p>
+        </div>
+        <div class="students-grades-info">
+          @for (student of students; track student.id) {
+            <div class="student-card">
+              <p>{{ student.name }} </p>
+              <p> {{ student.lastName }} </p>
+              <p> {{ student.grade }} </p>
+              <div class="mark-box">
+                <input #markInput
+                       type="number"
+                       min="0"
+                       max="100"
+                       [value]="getMarkValue(student.id)"
+                       (input)="updateTempMark(student.id, +markInput.value)"
+                       [disabled]="!isEditing"
+                />
+              </div>
+            </div>
+          }
+          <div class="mark-saver-div">
+            <button (click)="toggleEditMarks()" id="mark-saver-btn">
+              {{ isEditing ? 'Save Marks' : 'Change Marks' }}
+            </button>
           </div>
-        }
+        </div>
       </div>
-    </div>
   </div>
 }

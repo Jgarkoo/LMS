@@ -58,7 +58,7 @@ export class Student {
     }
   }
 
-  getStudentsBySubject(subjectId: number) {
+  getStudentsBySubject(subjectId: string) {
     return this.http.get<students[]>(`${this.studentURL}students`).pipe(
       map(students =>
         students.filter(s =>

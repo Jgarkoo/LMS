@@ -1,7 +1,7 @@
-export interface Marks {
+export interface Mark {
   id: string
   studentId: string
-  subjectId: number
+  subjectId: string
   teacherId: string
   value: number
   date: string

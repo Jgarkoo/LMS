@@ -1,5 +1,6 @@
 export interface SubjectItem {
-  id: number
+  id: string
   subject_name: string
-  teacherId: string
+  subjectId: string
+  teacher?: string
 }
